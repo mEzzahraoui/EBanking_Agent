@@ -37,7 +37,7 @@ public class AgentService extends WebServiceGatewaySupport {
 		 req.setArg0(username);
 		 GetProfilAgentResponse resp=(GetProfilAgentResponse)JAXBIntrospector.getValue(getWebServiceTemplate()
 					.marshalSendAndReceive(
-							new JAXBElement<GetProfilAgent>(new QName("http://soapService.meriame.com/", "getProfilAgentLogin"),GetProfilAgent.class,req)));
+							new JAXBElement<GetProfilAgent>(new QName("http://soapService.meriame.com/", "getProfilAgent"),GetProfilAgent.class,req)));
 					
 		 
 		return resp.getReturn();
@@ -74,6 +74,18 @@ public class AgentService extends WebServiceGatewaySupport {
 		 AddClientResponse resp=(AddClientResponse)JAXBIntrospector.getValue(getWebServiceTemplate()
 					.marshalSendAndReceive(
 							new JAXBElement<AddClient>(new QName("http://soapService.meriame.com/", "addClient"),AddClient.class,req)));
+				
+		 return resp.getReturn();
+		 
+
+	 }
+	 public ClientSOAPDTO getclient(String cin) {
+		Getclient req=(Getclient) objFactory.createGetclient();
+		 req.setArg0(cin);
+		 
+		 GetclientResponse resp=(GetclientResponse)JAXBIntrospector.getValue(getWebServiceTemplate()
+					.marshalSendAndReceive(
+							new JAXBElement<Getclient>(new QName("http://soapService.meriame.com/", "getclient"),Getclient.class,req)));
 				
 		 return resp.getReturn();
 		 
@@ -172,6 +184,18 @@ public class AgentService extends WebServiceGatewaySupport {
 						new JAXBElement<DesactivateCompte>(new QName("http://soapService.meriame.com/", "desactivateCompte"),DesactivateCompte.class,req)));
 			
 		return resp.isReturn();
+	}
+	
+	public CompteSOAPDTO getcompte(Long id) {
+		
+		GetCompte req= (GetCompte)objFactory.createGetCompte();
+		req.setArg0(id);
+		
+		GetCompteResponse resp=(GetCompteResponse)JAXBIntrospector.getValue(getWebServiceTemplate()
+				.marshalSendAndReceive(
+						new JAXBElement<GetCompte>(new QName("http://soapService.meriame.com/", "getCompte"),GetCompte.class,req)));
+			
+		return resp.getReturn();
 	}
 	
 }
