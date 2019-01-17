@@ -20,7 +20,7 @@ public class WSConfigClient {
 	@Bean
 	public AdminClient articleClient(Jaxb2Marshaller marshaller) {
 		AdminClient client = new AdminClient();
-		client.setDefaultUri("http://127.0.0.1:8044/services/AdminService?wsdl");
+		client.setDefaultUri("https://g-bank.herokuapp.com:8044/services/AdminService?wsdl");
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
 		return client;
@@ -29,7 +29,7 @@ public class WSConfigClient {
 	@Bean
 	public AgentService agentService(Jaxb2Marshaller marshaller) {
 		AgentService agentServ=new AgentService();
-		agentServ.setDefaultUri("http://127.0.0.1:8055/services/AgentService?wsdl");
+		agentServ.setDefaultUri("https://g-bank.herokuapp.com:8055/services/AgentService?wsdl");
 		agentServ.setMarshaller(marshaller);
 		agentServ.setUnmarshaller(marshaller);
 		return agentServ;
