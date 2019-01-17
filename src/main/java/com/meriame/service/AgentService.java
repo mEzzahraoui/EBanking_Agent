@@ -26,7 +26,7 @@ public class AgentService extends WebServiceGatewaySupport {
 		AgentLoginResponse resp=(AgentLoginResponse)JAXBIntrospector.getValue(getWebServiceTemplate()
 				.marshalSendAndReceive(
 						new JAXBElement<AgentLogin>(new QName("http://soapService.meriame.com/", "agentLogin"),AgentLogin.class,request)));
-				//uri : http://127.0.0.1:8055/services/AgentService?wsdl	
+				//uri : http://g-bank.herokuapp.com:8055/services/AgentService?wsdl
 		return resp.isReturn();
 		
 	}
