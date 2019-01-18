@@ -81,7 +81,7 @@
 					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
 					<schemas>
 						<schema>
-							<url>http://127.0.0.1:8055/services/AgentService?wsdl</url>
+							<url>https://g-bank.herokuapp.com/services/AgentService?wsdl</url>
 						</schema>
 					</schemas>
 				</configuration>
